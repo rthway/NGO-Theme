@@ -196,6 +196,24 @@
                 </ul>
         </section>
 
+
+  <header class="text-center mb-5">
+  <p class="text-danger fs-6 fst-italic">Where we are:</p>
+  <h1 class="display-4 fw-bold text-dark">NHN Footprint</h1>
+</header>
+
+    <!-- Footprint Section goes here -->
+    <section id="footprint">
+      <!-- <h2>Our Footprint</h2> -->
+      <div class="map-container">
+        <div id="nepalMap"></div>
+        <div class="location-list">
+          <!-- <h3>Locations</h3> -->
+          <ul id="locationList"></ul>
+        </div>
+      </div>
+   
+
         
 <!-- FOOTER  -->
 <footer class="footer-section">
@@ -529,3 +547,50 @@
 
 
     </style>
+
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const map = L.map('nepalMap').setView([28.3949, 84.1240], 7);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      const hospitals = [
+        { name: "Bayalpata Hospital", coords: [29.5169, 81.2503] },
+        { name: "Dailekh Hospital", coords: [28.8440, 81.7100] },
+        { name: "Charikot Hospital", coords: [27.6626, 86.0302] },
+        { name: "Mehelkuna Hospital", coords: [28.4400, 81.7111] },
+  { name: "Aampipal Hospital", coords: [28.2500, 83.0833] },
+  { name: "Kalikot District Hospital", coords: [29.1333, 81.6167] },
+  { name: "Rukum Paschhim District Hospital", coords: [28.6281, 82.2499] },
+  { name: "Salyan Hospital", coords: [28.3747, 82.1686] },
+  { name: "Wongchu Sherpa Memorial Hospital", coords: [27.7378, 86.7242] },
+  { name: "Mugu District Hospital", coords: [29.5333, 82.1333] },
+  { name: "Humla District Hospital", coords: [30.0000, 81.8333] },
+  { name: "Dolpa District Hospital", coords: [29.0167, 83.1167] }
+      ];
+
+      const locationList = document.getElementById("locationList");
+      const markers = [];
+
+      hospitals.forEach((hospital, index) => {
+        const marker = L.marker(hospital.coords)
+          .addTo(map)
+          .bindPopup(`<b>${hospital.name}</b>`);
+
+        markers.push(marker);
+
+        const li = document.createElement("li");
+        li.textContent = hospital.name;
+        li.addEventListener("click", () => {
+          map.setView(hospital.coords, 8); // Zoom to marker
+          marker.openPopup();               // Open popup
+        });
+
+        locationList.appendChild(li);
+      });
+    });
+  </script>
+

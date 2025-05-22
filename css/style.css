@@ -1002,3 +1002,144 @@ button:hover {
     flex-direction: column;
   }
 }
+
+
+
+/* // our-team css for board //  */
+.team-section {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  flex-shrink: 0;
+  margin-right: 30px;
+}
+
+.image-info img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.name-position h3 {
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.name-position .position {
+  font-size: 0.95rem;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.bio {
+  text-align: justify;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-info {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .bio {
+    text-align: center;
+  }
+}
+
+
+/* // team css  */
+.our-team-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.our-section-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.our-team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.our-team-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.our-team-card:hover {
+  transform: translateY(-5px);
+}
+
+.our-team-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.our-team-card h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.our-role {
+  font-weight: bold;
+  color: #555;
+}
+
+.our-bio {
+  font-size: 14px;
+  color: #666;
+}
